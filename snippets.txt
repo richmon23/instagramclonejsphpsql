@@ -1,0 +1,8 @@
+Home
+$title ="Instagram"
+$keyword ="Instagram,Share and capture world's moments,share,capture,share,home"
+$desc ="Instagram lets you capture,follow,Like and share world's moments in a better way and tell your story with photos,messages"
+
+$title ="Login . Instagram";
+$keywords ="Instagram,share and capture world's moments,share,capture,share,login,signup";
+$title ="Login . Instagram";
