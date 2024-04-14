@@ -1,4 +1,7 @@
 <?php 
+ 
+ require_once "core/init.php";
+
  $title="Register. Instagram";
  $keywords ="Instagram,share and capture world's moments,share,capture,share,login,signup";
  require "shared/header.php"
@@ -9,7 +12,7 @@
                     <div class="heroimg"></div>
                 </div>
                 <article class="col-2"> 
-                    <form action="" class="form">
+                    <form action="<?= h($_SERVER["PHP_SELF"]);?>" method="POST" class="form">
                         <div class="SiteLogoContainer">
                             <img src="public/logo/instagram.png" alt="Instagram Logo" class="imgcontainer">
                         </div>
@@ -33,19 +36,6 @@
             </main>
         </section>
         <script src="public/js/common.js"></script>
-        <!-- <script>
-            document.getElementById('show_hide_password').addEventListener('click', function() {
-                var passwordField = document.getElementById('password');
-                var showHideText = document.getElementById('show_hide_password');
-                
-                if (passwordField.type === 'password') {
-                    passwordField.type = 'text';
-                    showHideText.textContent = 'Hide';
-                } else {
-                    passwordField.type = 'password';
-                    showHideText.textContent = 'Show';
-                }
-            });
-        </script> -->
+       
  </body>
 </html>

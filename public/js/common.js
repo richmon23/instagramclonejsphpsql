@@ -1,13 +1,43 @@
+    const getId=(id)=>document.getElementById(id);
+    const getSl=(selector)=>document.querySelector(selector);
 
-document.getElementById('show_hide_password').addEventListener('click', function() {
-    var passwordField = document.getElementById('password');
-    var showHideText = document.getElementById('show_hide_password');
-    
-    if (passwordField.type === 'password') {
-        passwordField.type = 'text';
-        showHideText.textContent = 'Hide';
-    } else {
-        passwordField.type = 'password';
-        showHideText.textContent = 'Show';
+    const imageElement=getSl(".heroimg");
+    let slideIndex=0;
+    const IMAGE_DATA=[
+        "http://localhost/MIDTERMJSINSTAGRAM/public/1.png",
+        "http://localhost/MIDTERMJSINSTAGRAM/public/2.png",
+        "http://localhost/MIDTERMJSINSTAGRAM/public/3.png",
+        "http://localhost/MIDTERMJSINSTAGRAM/public/4.png",
+    ];
+
+
+
+if(password){
+
+    show_hide_password.addEventListener("click",function(){
+
+        if(password.type==="password"){
+            password.type="text";
+            show_hide_password.innerText="Hide";
+        }else{
+            password.type="password";
+            show_hide_password.innerText="Show";
+        }
+
+    })
+
+    // SLIDER IMAGES
+    function showSlides(){
+        const slider=()=>{
+           slideIndex++;
+           imageElement.style.backgroundImage=`url(${IMAGE_DATA[slideIndex]})`;
+           if(slideIndex==3) slideIndex =-1;
+        }
+      let timer= setInterval(slider,3000)
     }
-});
+    
+    showSlides()
+    
+    
+
+}
