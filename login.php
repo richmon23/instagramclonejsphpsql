@@ -29,7 +29,39 @@ require "shared/header.php"
                     <footer class="form-footer">
                         Don't have an account? <a href="register.php">Sign up</a>
                     </footer>
+                    <footer class="form-footer1">
+                        <span> Get the app.</span>
+                    </footer>
+                    <footer class="form-footer2">
+                        <div class="form-left">
+                            <img src="./public/google.png" alt="">
+                        </div>
+                        <div class="form-right">
+                            <img src="./public/microsoft.png" alt="">
+                        </div>
+                    </footer>
                 </article>
+
+                <div class="footer3">
+                 
+                   <ul class="no-bullet">
+                        <li><a href="#">Meta</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Jobs</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Locations</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Threads</a></li>
+                        <li><a href="#">Contact Uploading & Non-Users</a></li>
+                        <li><a href="#">Meta Verified</a></li>
+                   </ul>
+                   
+                </div>
+                
                  
             </main>
         </section>
