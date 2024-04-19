@@ -43,8 +43,7 @@ require "shared/header.php"
                 </article>
 
                 <div class="footer3">
-                 
-                   <ul class="no-bullet">
+                 <ul class="no-bullet">
                         <li><a href="#">Meta</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Blog</a></li>
@@ -58,11 +57,45 @@ require "shared/header.php"
                         <li><a href="#">Threads</a></li>
                         <li><a href="#">Contact Uploading & Non-Users</a></li>
                         <li><a href="#">Meta Verified</a></li>
-                   </ul>
-                   
+                   </ul>   
+                   <br>
+                  <div class="footer5">
+                    <div class="div1">
+                        <select name="" id="">
+                            <option value="">English</option>
+                            <option value="">Español</option>
+                            <option value="">Français</option>
+                            <option value="">Deutsch</option>
+                            <option value="">한국어</option>
+                            <option value="">Português</option>
+                            <option value="">Italiano</option>
+                            <option value="">Русский</option>
+                            <option value="">日本語</option>
+                            <option value="">简体中文</option>
+                            <option value="">العربية</option>
+                            <option value="">हिन्दी</option>
+                            <option value="">Türkçe</option>
+                            <option value="">Nederlands</option>
+                            <option value="">Svenska</option>
+                            <option value="">Polski</option>
+                            <option value="">ไทย</option>
+                            <option value="">Bahasa Indonesia</option>
+                            <option value="">Tiếng Việt</option>
+                            <option value="">Ελληνικά</option>
+                            <option value="">עִברִית</option>
+                            <option value="">Suomi</option>
+                            <option value="">Norsk</option>
+                            <option value="">Dansk</option>
+                            <option value="">Filipino</option>
+                        </select>
+                    </div>
+                    
+                    <div class="div2">
+                            ©️  2024 Instagram from Meta
+                    </div>
+                  </div>
                 </div>
                 
-                 
             </main>
         </section>
         <script src="public/js/common.js"></script>
