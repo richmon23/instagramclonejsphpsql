@@ -12,6 +12,14 @@ if (Input::exist()) {
         
          $form_errors=array_merge($form_errors,checked_empty_fields($required_fields));
         //var_dump($form_errors);
+
+        $fields_to_check_lenght=array("fullname"=>3,"username"=>3,"password"=>6);
+       
+        $form_errors=array_merge($form_errors,check_min_lenght($fields_to_check_lenght));
+
+
+
+
    
   }
 }
@@ -87,7 +95,30 @@ require "shared/header.php";
                 <div class="div1">
                     <select name="" id="">
                         <option value="">English</option>
-                        <!-- Other language options -->
+                        <option value="">Español</option>
+                        <option value="">Deutsch</option>
+                        <option value="">한국어</option>
+                        <option value="">Português</option>
+                        <option value="">Italiano</option>
+                        <option value="">Русский</option>
+                        <option value="">日本語</option>
+                        <option value="">简体中文</option>
+                        <option value="">العربية</option>
+                        <option value="">हिन्दी</option>
+                        <option value="">Türkçe</option>
+                        <option value="">Nederlands</option>
+                        <option value="">Svenska</option>
+                        <option value="">Polski</option>
+                        <option value="">ไทย</option>
+                        <option value="">Bahasa Indonesia</option>
+                        <option value="">Tiếng Việt</option>
+                        <option value="">Ελληνικά</option>
+                        <option value="">עִברִית</option>
+                        <option value="">Suomi</option>
+                        <option value="">Norsk</option>
+                        <option value="">Dansk</option>
+                        <option value="">Filipino</option>
+                        <option value="">Français</option>
                     </select>
                 </div>
 
