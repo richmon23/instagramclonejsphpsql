@@ -18,6 +18,12 @@ if (Input::exist()) {
         $form_errors=array_merge($form_errors,check_min_lenght($fields_to_check_lenght));
 
 
+        $form_errors=array_merge($form_errors,check_email($_POST));
+
+
+        if(empty($form_errors)){
+            //TODO: CHECK WEETHER EMAIL OR USERNAME  EXIST
+        }
 
 
    

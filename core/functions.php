@@ -32,6 +32,23 @@ function check_min_lenght($fields_to_check_lenght){
 }
   
 
+function check_email($data){
+    //initialize an array to store error message
+    $form_errors = array();
+    $key = "email";
+    if(array_key_exists($key, $data)){
+        if($_POST[$key] != NULL){
+            $key = filter_var($key, FILTER_SANITIZE_EMAIL);
+            if(filter_var($_POST[$key], FILTER_VALIDATE_EMAIL) === false){
+                $form_errors[] = $key . " is not a valid email address";
+            }
+        }
+    }
+    return $form_errors;
+}
+
+
+
 function show_errors($form_errors_array){
 
 	$errors="<ul class='form_errors'> ";
