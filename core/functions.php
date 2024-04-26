@@ -19,17 +19,30 @@ function checked_empty_fields($required_fields){
     return $form_errors;
 }
 
-function check_min_lenght($fields_to_check_lenght){
-    //initialize an array to store error message
-    $form_errors = array();
-    foreach($fields_to_check_lenght as $name_of_field => $minimum_lenght){
-            if(strlen(trim($_POST[$name_of_field])) < $minimum_lenght){
-                $form_errors[]=$name_of_field."is to short,must be {$minimum_lenght}characters long";
-         }
-    }
-    return $form_errors;
+// function check_min_lenght($fields_to_check_lenght){
+//     //initialize an array to store error message
+//     $form_errors = array();
+//     foreach($fields_to_check_lenght as $name_of_field => $minimum_lenght){
+//             if(strlen(trim($_POST[$name_of_field])) < $minimum_lenght){
+//                 $form_errors[]=$name_of_field."is to short,must be {$minimum_lenght}characters long";
+//          }
+//     }
+//     return $form_errors;
 
+// }
+
+
+function check_min_length($fields) {
+    $errors = array();
+    foreach ($fields as $field => $min_length) {
+        if (strlen($_POST[$field]) < $min_length) {
+            $errors[] = ucfirst($field) . " must be at least $min_length characters long.";
+        }
+    }
+    return $errors;
 }
+
+
   
 
 function check_email($data){

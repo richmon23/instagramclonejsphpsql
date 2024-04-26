@@ -15,4 +15,5 @@ spl_autoload_register(function ($className)
     require_once "classes/".$className.".php";
 });
 
-Database:: connect();
+$account = new Account();
+
