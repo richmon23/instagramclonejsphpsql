@@ -4,6 +4,11 @@ function h($string=""){
     return htmlspecialchars($string);
 }
 
+function url_for($script){
+    return WWW_ROOT.$script;
+}
+
+
 function escape($string){
     return htmlspecialchars($string, ENT_QUOTES);
 }

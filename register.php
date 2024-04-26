@@ -33,6 +33,8 @@ if (Input::exist()) {
             'email'=>array('unique'=>'users'),
             'username'=>array('unique'=>'users'),
             'password'=>array('max'=>30)
+
+
         ];
         
         // $account = new Account();
@@ -42,7 +44,17 @@ if (Input::exist()) {
         if($account ->passed()){
             //check if error array is empty, if yes process form data and insert record
          if(empty($form_errors)){
+                $username=escape($_POST['username']);
+                $fullname=escape($_POST['fullname']);
+                $email=escape($_POST['email']);
+                $password=escape($_POST['password']);
 
+                $user_id=$account->register_user($username,$fullname,$email,$password);
+                if($user_id){
+                    session_regenerate_id();
+                    $_SESSION['user_id']=$user_id;
+                    Redirect::to(url_for('index.php'));
+                }
             }
         }else{
             $form_errors=array_merge($form_errors,$account->errors());
