@@ -143,6 +143,7 @@ class Account{
     }
     
     
+    // checking the data or information already exist in database
 
     public function check($source, $items=array()) {
         
@@ -198,4 +199,30 @@ class Account{
     public function passed(){
         return $this->passed;
     }
+
+    // checking the email and password are in the database 
+    public function login_user($email_username, $password){
+        $stmt = $this->pdo->prepare("SELECT * FROM users WHERE email=:username OR username=:username");
+        $stmt->bindParam(':username', $email_username, PDO::PARAM_STR);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_OBJ);
+        if($stmt->rowCount() != 0){
+            if(password_verify($password, $row->password)){
+                if(empty($this->errors)){
+                    $this->passed = true;
+                    return $row->user_id;
+                }
+                
+            } else {
+                $this->addError("Username and Password Incorrect");
+                return false;
+            }
+        } else {
+            $this->addError("Username and Password Incorrect"); // <-- semicolon added here
+            return false;
+        }
+        
+       
+    }
+    
 }

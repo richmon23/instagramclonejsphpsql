@@ -1,9 +1,13 @@
+
+<!-- to view errors this is the command -->
+<!-- var_dump($account->errors()); -->
+
 <?php 
  
  require_once "core/init.php";
-// if(loggedIn()){
-//     Redirect::to('index.php');
-// }
+if(loggedIn()){
+    Redirect::to('index.php');
+}
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 // Check if form is submitted
@@ -19,24 +23,55 @@ if (Input::exist()) {
         
     
         
-        if($account ->passed()){
-            //check if error array is empty, if yes process form data and insert record
-         if(empty($form_errors)){
-                
-                $email=escape($_POST['email_username']);
-                $password=escape($_POST['password']);
+        
 
-                // $user_id=$account->register_user($username,$fullname,$email,$password);
-                // if($user_id){
-                //     session_regenerate_id();
-                //     $_SESSION['user_id']=$user_id;
-                //     Redirect::to(url_for('mort.php.php'));
+                //collect form data and store in variable 
+                // $email_username=escape($_POST['email_username']);
+                // $password=escape($_POST['password']);
+
+                // $user_id=$account->login_user($email_username,$password);
+                // // var_dump($account->errors());
+                // if($account->passed()){
+                //     if(empty($form_errors)){
+                //        session_regenerate_id();
+                //        $_SESSION['user_id']=$user_id;
+                //        Redirect::to(url_for('index.php'));
+
+                //     }else{
+                //         $form_errors=array_merge($form_errors,$account->errors());
+                //     }
                 // }
-            }
-        }else{
-            $form_errors=array_merge($form_errors,$account->errors());
-        }
-  }
+                
+
+                $form_errors = array();
+
+                // Collect form data and store in variable
+                $email_username = escape($_POST['email_username']);
+                $password = escape($_POST['password']);
+
+                // Attempt to log in user
+                $user_id = $account->login_user($email_username, $password);
+
+                // Check if login was successful
+                if ($user_id !== false) {
+                    
+                    // If login was successful, regenerate session ID and set user ID in session
+                    session_regenerate_id();
+                    $_SESSION['user_id'] = $user_id;
+                    Redirect::to(url_for('index.php'));
+                } else {
+                    // If login failed, merge account errors into form_errors array
+                    $form_errors = array_merge($form_errors, $account->errors());
+                }
+
+                // Display errors
+                // foreach ($form_errors as $error) {
+                //     echo $error . "<br>";
+                // }
+
+
+                
+    }
 }
  $title="Login . Instagram";
  $keywords ="Instagram,share and capture world's moments,share,capture,share,login,signup";
