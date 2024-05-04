@@ -54,7 +54,7 @@ if (Input::exist()) {
                 if($user_id){
                     session_regenerate_id();
                     $_SESSION['user_id']=$user_id;
-                    Redirect::to(url_for('mort.php.php'));
+                    Redirect::to(url_for('login.php'));
                 }
             }
         }else{
