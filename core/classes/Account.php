@@ -202,6 +202,9 @@ class Account{
 
     // checking the email and password are in the database 
     public function login_user($email_username, $password){
+
+       if(!empty($email_username) && !empty ($password)){
+         
         $stmt = $this->pdo->prepare("SELECT * FROM users WHERE email=:username OR username=:username");
         $stmt->bindParam(':username', $email_username, PDO::PARAM_STR);
         $stmt->execute();
@@ -221,6 +224,7 @@ class Account{
             $this->addError("Username and Password Incorrect"); // <-- semicolon added here
             return false;
         }
+       }
         
        
     }
