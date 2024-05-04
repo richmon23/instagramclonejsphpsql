@@ -1,6 +1,43 @@
 <?php 
  
+ require_once "core/init.php";
+// if(loggedIn()){
+//     Redirect::to('index.php');
+// }
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+// Check if form is submitted
+if (Input::exist()) {
+    // Form is submitted, process the data
+    if(isset($_POST['submitbutton'])){
 
+        //initialize an array to store any error message from the form
+        $form_errors=array();
+        $required_fields=array("email_username","password");
+        
+        $form_errors=array_merge($form_errors,checked_empty_fields($required_fields));
+        
+    
+        
+        if($account ->passed()){
+            //check if error array is empty, if yes process form data and insert record
+         if(empty($form_errors)){
+                
+                $email=escape($_POST['email_username']);
+                $password=escape($_POST['password']);
+
+                // $user_id=$account->register_user($username,$fullname,$email,$password);
+                // if($user_id){
+                //     session_regenerate_id();
+                //     $_SESSION['user_id']=$user_id;
+                //     Redirect::to(url_for('mort.php.php'));
+                // }
+            }
+        }else{
+            $form_errors=array_merge($form_errors,$account->errors());
+        }
+  }
+}
  $title="Login . Instagram";
  $keywords ="Instagram,share and capture world's moments,share,capture,share,login,signup";
 
@@ -13,11 +50,16 @@ require "shared/header.php"
                     <div class="heroimg"></div>
                 </div>
                 <article class="col-2"> 
-                    <form action="" class="form">
+                <?php
+                     if(!empty($form_errors)){
+                        echo show_errors($form_errors);
+                        }
+                     ?>
+                    <form action="<?= h($_SERVER["PHP_SELF"]); ?>" method="POST" class="form">
                         <div class="SiteLogoContainer">
                             <img src="public/logo/instagram.png" alt="Instagram Logo" class="imgcontainer">
                         </div>
-                        <input type="text" placeholder="Email or Username" class="form-input" name="email_username" autocomplete="off">
+                        <input type="text" placeholder="Email or Username" class="form-input" name="email_username" valu="<?= escape(Input::get('email_username')); ?>" autocomplete="off">
                         <div class="passwordContainer">
                         <input type="password" placeholder="Password" class="form-input" name="password" id="password" autocomplete="off">
                         <span class="show-hide-text cursor-pointer" id="show_hide_password">Show</span>

@@ -1,0 +1,250 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+   
+}
+body{
+    color:rgba(38,38, 38,1);
+    line-height: 18px;
+    font-family: sans-serif;
+    
+}
+html{
+    font-size: 62.5%;
+}
+a{
+    text-decoration:none;
+}
+.PageContainer{
+        height:100vh;
+        background-color:#fafafa;
+        width:100%;
+        padding:1rem;
+    }
+ .row{
+    display: flex;
+    padding: 0 2rem;
+    width: 100%;
+    max-width:93.5rem;
+    margin: 3rem auto 0;
+ }   
+ .col-1{
+    position: relative;
+    min-width:46rem;
+    height:61.8rem;
+    background: url(../home-phone.png) center no-repeat;
+    background-size:100% 100%;
+ }
+ .col-1 .heroimg{
+
+    width:55%;
+    height:53rem;
+    background:url(../2.png)center no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top:2.5rem;
+    left:15rem;
+
+ }
+ .col-2{
+    width: 100%;
+    max-width: 35rem;
+    margin-top:3rem;
+  
+ }
+ .col-2 form{
+    background: #fff;
+    border: 2px solid #eee;
+    display:flex;
+    flex-direction:column;
+    padding:2rem 4rem;
+    text-align: center;
+ }
+.form-input{
+    padding: 0.8rem;
+    margin-bottom:0.5rem;
+    border:2px solid #eee;
+    border-radius:0.4rem;
+  
+
+   
+}
+.form-input:focus{
+    outline:none;
+    border:2px solid rgba(168,168,168,1);
+}
+.passwordContainer{
+    position: relative;
+}
+.passwordContainer input{
+    width: 100%;
+    margin-top: 0.8rem;
+
+}
+.show-hide-text{
+    position: absolute;
+    top:16px;
+    right:5px;
+    font-size: 13px;
+}
+.imgcontainer{
+width:170px;
+height:70px;
+}
+.imgcontainer img{
+    width:100%;
+    height:100%;
+}
+form a{
+    margin:1rem 0 1.5rem;
+    height:3rem;
+    border:none;
+    background: #5aa8f0;
+    color:#fff;
+    border-radius: 0.4rem;
+    font-weight: bold;
+
+}
+form a:hover{
+    background-color: #0084ff;
+}
+.separator{
+    font-size: 1.3rem;
+    color:#999;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+    position: relative;
+
+}
+.separator::before,.separator::after{
+    content:"";
+    position: absolute;
+    background: #eee;
+    width:40%;
+    height: 1px;
+    top:50%;
+    transform: translateY(-50%);
+
+}
+.separator::before{
+    left:0;
+}
+.separator::after{
+    right:0;
+}
+.password-reset{
+    font-size: 1.7rem;
+    color:#003569;
+    cursor: pointer;
+}
+.password-reset:hover,.form-footer a:hover{
+    text-decoration: underline;
+}
+.form-footer{
+    text-align: center;
+    font-size: 1.4rem;
+    color:#262626;
+    padding:2rem 0;
+    background: #fff;
+    border: 2px solid #eee;
+    margin:1rem 0;
+
+}
+.form-footer a{
+    color:#3897f0;
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+
+.form-footer1{
+    text-align: center;
+    font-size: 1.4rem;
+    color:#262626;
+    
+
+}
+
+.form-footer2{
+   
+    display: flex;
+    margin-top: 10px;
+}
+.form-footer2 .form-left{
+    width: 50%;
+   
+}
+.form-footer2 .form-left img{
+    width: 100%;
+    height: 100%;
+}
+.form-footer2 .form-left img:hover{
+    cursor: pointer;
+}
+.form-footer2 .form-right{
+    width: 50%;
+   
+}
+.form-footer2 .form-right img{
+    width: 100%;
+    height: 100%;
+}
+.form-footer2 .form-right img:hover{
+    cursor: pointer;
+}
+.footer3{
+    width:80%;
+    position: absolute;
+    top:630px;
+    right:140px;
+    
+    
+
+}
+.footer3 a{
+    color:black;
+    font-size: 1.2rem;
+  
+   
+}
+.footer3 a:hover{
+    text-decoration: underlinew;
+}
+
+.footer3 .no-bullet{
+  list-style-type: none;
+  display: flex;
+  
+ 
+}
+.footer3 li{
+    margin: 1.8rem;
+}
+.footer4{
+    width:80%;
+    position: absolute;
+    top:670px;
+    right:140px;
+    
+    
+
+}
+.footer4 a{
+    color:black;
+    font-size: 1.2rem;
+  
+   
+}
+.footer4 a:hover{
+    text-decoration: underline;
+}
+
+.footer4 .no-bullet{
+  list-style-type: none;
+  display: flex;
+  
+ 
+}
+.footer4 li{
+    margin: 1.8rem;
+}

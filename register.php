@@ -1,7 +1,8 @@
 <?php
 require_once "core/init.php";
-
-
+if(loggedIn()){
+    Redirect::to('index.php');
+}
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 // Check if form is submitted
@@ -53,7 +54,7 @@ if (Input::exist()) {
                 if($user_id){
                     session_regenerate_id();
                     $_SESSION['user_id']=$user_id;
-                    Redirect::to(url_for('index.php'));
+                    Redirect::to(url_for('mort.php.php'));
                 }
             }
         }else{

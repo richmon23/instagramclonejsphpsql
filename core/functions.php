@@ -48,6 +48,16 @@ function check_min_length($fields) {
 }
 
 
+// login function
+function loggedIn(){
+    if(isset($_SESSION['user_id'])){
+        return true;
+
+    }else{
+        return false;
+    }
+}
+
   
 
 function check_email($data){
