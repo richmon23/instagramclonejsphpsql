@@ -34,7 +34,7 @@ require "shared/header.php";
                         <a href="#" class="password-reset">Forget Password</a>
                     </form>
                     <footer class="form-footer">
-                        Don't have an account? <a href="register.php">Sign up</a>
+                        Don't have an account? <a href="register">Sign up</a>
                     </footer>
                     <footer class="form-footer1">
                         <span> Get the app.</span>

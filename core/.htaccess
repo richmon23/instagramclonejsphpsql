@@ -1,0 +1,34 @@
+RewriteEngine on
+
+# Check if the requested file or directory does not exist
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#For removing extension as options +MultiViews not working with RewriteRule
+RewriteRule ^([a-zA-Z0-9_]+)$ $1.php [QSA,NC,L]
+
+# Rewrite rule for removing extension
+RewriteRule ^profile/([a-zA-Z0-9_@]+)$ profile.php?username=$1 [QSA,NC,L]
+
+# If the above rule doesn't match, redirect to profile.php
+RewriteRule ^profile/profile.php[QSA,NC,L]
+
+
+
+# Custom 404 error page
+ErrorDocument 404 /MIDTERMJSINSTAGRAM/404.php
+
+# Deny access to .htaccess files
+<FilesMatch "^\.htaccess$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Disable directory listing
+#Options -Indexes
+
+# Disable Multiviews
+#Options -MultiViews
+
+# Ignore index files
+IndexIgnore *

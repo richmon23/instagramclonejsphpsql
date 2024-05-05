@@ -21,7 +21,7 @@ $desc ="Instagram lets you capture,follow,Like and share world's moments in a be
     <meta name="kewords" content="<?=$keywords; ?>">
     <meta name="description" content="<?=$desc; ?>">
     <meta name="author" content="Richmon">
-    <link rel="shortcut icon" href="public/favicon/instagram.ico" type="image/x-icon">
-    <link rel="stylesheet" href="public/css/register.css">
+    <link rel="shortcut icon" href="<?=url_for('public/favicon/instagram.ico');?>" type="image/x-icon">
+    <link rel="stylesheet" href="<?=url_for('public/css/master.css');?>">
 </head>
 <body>

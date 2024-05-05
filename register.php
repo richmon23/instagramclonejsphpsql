@@ -29,7 +29,7 @@ require "shared/header.php";
                 <button class="button cursor-pointer" type="submit" name="submitbutton">Register</button>
                 <span class="separator">Or</span>
                 <footer class="form-footer">
-                    Have an account? <a href="login.php">Log In</a>
+                    Have an account? <a href="login">Log In</a>
                 </footer>
             </form>
 

@@ -53,7 +53,7 @@
                         // If login was successful, regenerate session ID and set user ID in session
                         session_regenerate_id();
                         $_SESSION['user_id'] = $user_id;
-                        Redirect::to(url_for('index.php'));
+                        Redirect::to(url_for('index'));
                     } else {
                         // If login failed, merge account errors into form_errors array
                         $form_errors = array_merge($form_errors, $account->errors());

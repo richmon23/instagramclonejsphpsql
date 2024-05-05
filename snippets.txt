@@ -6,3 +6,34 @@ $desc ="Instagram lets you capture,follow,Like and share world's moments in a be
 $title ="Login . Instagram";
 $keywords ="Instagram,share and capture world's moments,share,capture,share,login,signup";
 $title ="Login . Instagram";
+
+RewriteEngine onRewriteEngine on
+
+# Check if the requested file or directory does not exist
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite rule for removing extension
+RewriteRule ^profile/([a-zA-Z0-9_]+)$ profile.php?username=$1 [QSA,NC,L]
+
+# If the above rule doesn't match, redirect to profile.php
+RewriteRule ^profile/$ profile.php [QSA,NC,L]
+
+# Custom 404 error page
+ErrorDocument 404 /Instagram/404.php
+
+# Deny access to .htaccess files
+<FilesMatch "^\.htaccess$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Disable directory listing
+Options -Indexes
+
+# Disable Multiviews
+Options -MultiViews
+
+# Ignore index files
+IndexIgnore *
+
