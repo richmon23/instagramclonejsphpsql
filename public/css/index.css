@@ -1,0 +1,40 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: content-box;
+}
+
+.global-header{
+    width:100%;
+    height:70px;
+    background-color:#f1f2f3;
+    padding:13px;
+    position:relative;
+}
+.global-header__content{
+    display: flex;
+    
+}
+.global-header__content__button img{
+    position: absolute;
+    left:15rem;
+}
+.global-search{
+    position: absolute;
+    left:40rem;
+}
+.global-header-logo{
+    position: absolute;
+    left:70rem;
+    padding-top:.5rem;
+}
+.global-search{
+   display: flex;
+}
+.form-inline{
+    display:flex;
+    background: #f1f2f3;
+}
+.btn btn-outline-success{
+    padding-left:1rem;
+}
